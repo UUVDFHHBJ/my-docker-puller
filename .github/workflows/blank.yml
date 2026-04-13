@@ -1,6 +1,12 @@
-runs-on: ubuntu-latest
+name: Docker-Downloader
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Maximize Disk Space
+      - name: Free Space
         run: |
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
           sudo docker image prune -a -f
